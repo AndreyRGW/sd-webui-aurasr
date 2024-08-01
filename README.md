@@ -8,8 +8,8 @@ This extension integrates [AuraSR V2](https://huggingface.co/fal/AuraSR-v2), AI 
 - Can be used in *hires fix*, *upscaler_for_img2img*, or in the *extras* tab
 - Automatic model download from Hugging Face
 
-![Preview image placeholder](/images/preview.png)
-![Upscalers menu image placeholder](/images/upscalers.png)
+![](/images/preview.png)
+![](/images/upscaler.png)
 
 ## Installation
 
