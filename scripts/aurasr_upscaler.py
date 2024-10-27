@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from modules.upscaler import Upscaler, UpscalerData
+from modules import devices
 from scripts.aurasr_tools import runAuraSR
 
 @dataclass
@@ -22,7 +23,9 @@ class BaseClass(Upscaler):
         super().__init__()
 
     def do_upscale(self, img, selected_model):
-        return runAuraSR(img)
+        # Get the appropriate device for AuraSR
+        device = devices.get_device_for('aurasr')
+        return runAuraSR(img, device)
 
 class Class0(BaseClass, Upscaler):
     def __init__(self, dirname):
