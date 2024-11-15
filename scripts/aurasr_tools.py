@@ -9,7 +9,8 @@ def get_aura_sr_model(device):
     model_path = hf_hub_download(model_name, "model.safetensors")
     config_path = hf_hub_download(model_name, "config.json")
     model = AuraSR.from_pretrained(model_path, use_safetensors=True)
-    return model.to(device)
+    model.device = device
+    return model
 
 def runAuraSR(img: Image.Image, device: torch.device) -> Image.Image:
     try:
